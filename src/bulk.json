@@ -1,0 +1,102 @@
+[
+  {
+    "name": "arroz con pollo y chapinones",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "albóndigas",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "wraps de pollo y verdura",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "špagty s mletým masem",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "muslo de pollo con patatas al horno",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "trozos de pollo con rucola y uvas pasas",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "medallones de pollo",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "alitas de pollo",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "pollo asado",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "filetes de lomo/...",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "costillas",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "solomillo",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "pollo guisado",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "codillo",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "chilli con carne",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "hígado encebollado",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "pollo en salsa de cerveza",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "patatas con salchichas al vino",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "pimientos verdes rellenos con carne picada",
+    "category": "meat",
+    "eatFor": "lunch"
+  },
+  {
+    "name": "patatas a la Riojana",
+    "category": "meat",
+    "eatFor": "lunch"
+  }
+]

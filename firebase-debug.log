@@ -1,0 +1,54 @@
+[debug] [2021-11-03T23:03:52.012Z] ----------------------------------------------------------------------
+[debug] [2021-11-03T23:03:52.015Z] Command:       /Users/pkrejcik/.nvm/versions/node/v12.22.1/bin/node /Users/pkrejcik/.config/yarn/global/node_modules/.bin/firebase deploy
+[debug] [2021-11-03T23:03:52.015Z] CLI Version:   9.20.0
+[debug] [2021-11-03T23:03:52.015Z] Platform:      darwin
+[debug] [2021-11-03T23:03:52.016Z] Node Version:  v12.22.1
+[debug] [2021-11-03T23:03:52.018Z] Time:          Thu Nov 04 2021 00:03:52 GMT+0100 (Central European Standard Time)
+[debug] [2021-11-03T23:03:52.018Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-03T23:03:52.076Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-03T23:03:52.076Z] > authorizing via signed-in user (krejcik.petr@gmail.com)
+[debug] [2021-11-03T23:03:52.076Z] [iam] checking project que-comemos-hoy-5febf for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-03T23:03:52.078Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-03T23:03:52.079Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-03T23:03:52.217Z] <<< HTTP RESPONSE 200 {"date":"Wed, 03 Nov 2021 23:03:52 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-03T23:03:52.264Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/que-comemos-hoy-5febf:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-03T23:03:53.117Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 03 Nov 2021 23:03:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=661","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-03T23:03:53.119Z] > refreshing access token with scopes: []
+[debug] [2021-11-03T23:03:53.119Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-03T23:03:53.213Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Wed, 03 Nov 2021 23:03:53 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-03T23:03:53.261Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/que-comemos-hoy-5febf [none]
+[debug] [2021-11-03T23:03:53.524Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/que-comemos-hoy-5febf 200
+[debug] [2021-11-03T23:03:53.524Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/que-comemos-hoy-5febf {"projectId":"que-comemos-hoy-5febf","projectNumber":"545019553365","displayName":"Que comemos hoy","name":"projects/que-comemos-hoy-5febf","resources":{"hostingSite":"que-comemos-hoy-5febf","realtimeDatabaseInstance":"que-comemos-hoy-5febf","storageBucket":"que-comemos-hoy-5febf.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'que-comemos-hoy-5febf'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-11-03T23:03:53.529Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-03T23:03:53.530Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-03T23:03:53.634Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 03 Nov 2021 23:03:53 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-03T23:03:53.673Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/que-comemos-hoy-5febf/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-11-03T23:03:55.165Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 03 Nov 2021 23:03:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[que-comemos-hoy-5febf]: beginning deploy... 
+[info] i  hosting[que-comemos-hoy-5febf]: found 6 files in public 
+[debug] [2021-11-03T23:03:55.388Z] > refreshing access token with scopes: []
+[debug] [2021-11-03T23:03:55.388Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-03T23:03:55.389Z] [hosting] hash cache [cHVibGlj] stored for 6 files
+[debug] [2021-11-03T23:03:55.389Z] [hosting][hash queue][FINAL] {"max":212,"min":2,"avg":40.666666666666664,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":215}
+[debug] [2021-11-03T23:03:55.491Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 03 Nov 2021 23:03:55 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-03T23:03:55.531Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1:populateFiles [none]
+[debug] [2021-11-03T23:03:55.531Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1:populateFiles {"files":{"/favicon.png":"afb8a0d6f40ee5294d6fbe18fe7323bcfd74dedcb456f5603bbcebf4dfb9afe2","/global.css":"4d8b76cee1d94fed88759465d45e0c4c2a8e7d5674a0cbcaacfda62bac0b518d","/index.html":"478ef81302fb931106fc314275475cd05d24dbf7a2fc851060cbc950708ed80e","/build/bundle.css":"a84a56f68d16eab86bc01d8616a09476aa5d706577f1c658dca2504cbda982e4","/build/bundle.js":"005ca709537bb1f3ba6d49b7809e7a608669e7865c1380785f3ba4aa10a2aa11","/build/bundle.js.map":"146e61544606a9d0c534ac780031e6278693937fb4e225cf615683e8e28feb2a"}}
+[debug] [2021-11-03T23:03:56.604Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1:populateFiles 200
+[debug] [2021-11-03T23:03:56.604Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1:populateFiles {"uploadRequiredHashes":["005ca709537bb1f3ba6d49b7809e7a608669e7865c1380785f3ba4aa10a2aa11","146e61544606a9d0c534ac780031e6278693937fb4e225cf615683e8e28feb2a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1/files"}
+[debug] [2021-11-03T23:03:56.607Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1/files/005ca709537bb1f3ba6d49b7809e7a608669e7865c1380785f3ba4aa10a2aa11 [none]
+[debug] [2021-11-03T23:03:56.607Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1/files/005ca709537bb1f3ba6d49b7809e7a608669e7865c1380785f3ba4aa10a2aa11 [stream]
+[debug] [2021-11-03T23:03:56.610Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1/files/146e61544606a9d0c534ac780031e6278693937fb4e225cf615683e8e28feb2a [none]
+[debug] [2021-11-03T23:03:56.610Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/que-comemos-hoy-5febf/versions/181b672a37239ea1/files/146e61544606a9d0c534ac780031e6278693937fb4e225cf615683e8e28feb2a [stream]
+[debug] [2021-11-03T23:03:56.613Z] [hosting][populate queue][FINAL] {"max":1220,"min":1220,"avg":1220,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1226}
+[debug] [2021-11-03T23:03:56.613Z] [hosting] uploads queued: 2
