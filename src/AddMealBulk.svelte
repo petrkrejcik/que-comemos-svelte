@@ -5,7 +5,6 @@
 
   const onChange = (e) => {
     const meals = JSON.parse(e.target.value);
-    console.log("🛎 ", "meals", meals);
     meals.forEach((meal) => {
       addDoc(collection(db, "meals"), meal);
     });
