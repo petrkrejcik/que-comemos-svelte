@@ -108,7 +108,7 @@
   <div style="display: flex; flex-direction: column">
     {day}
     <div style="display: flex; justify-content: center; align-items: center; gap: 8px">
-      <select on:change={onChange(i)} on:click={onSelectClick} style="flex-grow: 1">
+      <select on:change={onChange(i)} on:click={onSelectClick} style="flex-grow: 1; width: 100%">
         {#if !mealsQueryEnabled && weekPlan[`d${i}`]?.lunch}
           <option selected value on:click={onSelectClick}>{weekPlan[`d${i}`].lunch.name}</option>
         {/if}
