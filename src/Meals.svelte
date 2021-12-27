@@ -1,5 +1,5 @@
 <script>
-  import { collection, query, doc, updateDoc, setDoc, orderBy } from "firebase/firestore";
+  import { collection, query, doc, where, setDoc, orderBy } from "firebase/firestore";
   import { db } from "./firebase";
   import { randomizeDay, randomizeWeek } from "./lib/meal";
   import { getWeekId } from "./date";
@@ -18,7 +18,7 @@
   $: weekId = getWeekId(week);
   $: weekPlanRef = doc(db, "weekPlans", weekId);
 
-  const mealsQuery = query(mealsRef, orderBy("name"));
+  const mealsQuery = query(mealsRef, where("eatFor", "==", "lunch"), orderBy("name"));
   $: weekPlanQuery = query(weekPlanRef);
 
   let meals = writable([]);
@@ -37,12 +37,18 @@
   const onChange = (dayIndex) => (e) => {
     const meal = $meals.find((meal) => meal.id === e.target.value);
     if (!meal) return;
-    updateDoc(weekPlanRef, {
-      [`d${dayIndex}.lunch`]: {
-        id: meal.id,
-        name: meal.name,
+    setDoc(
+      weekPlanRef,
+      {
+        [`d${dayIndex}`]: {
+          lunch: {
+            id: meal.id,
+            name: meal.name,
+          },
+        },
       },
-    });
+      { merge: true }
+    );
   };
 
   const onSelectClick = (e) => {

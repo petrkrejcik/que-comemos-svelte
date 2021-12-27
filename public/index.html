@@ -11,6 +11,31 @@
 	<link rel='stylesheet' href='/build/bundle.css'>
 
 	<script defer src='/build/bundle.js'></script>
+
+	<script>
+		(() => {
+			// Enable debug console when "debug" query parameter is true
+			const urlParams = new URLSearchParams(window.location.search);
+			const debugEnabled = urlParams.get('debug') !== null;
+			if (!debugEnabled) return;
+
+			const consoleJs = document.createElement('script');
+			const consoleCss = document.createElement('link');
+			consoleCss.setAttribute('rel', 'stylesheet');
+			consoleJs.onload = () => {
+				if (!window.consolePanel) {
+					console.error('Cannot load console panel');
+					return;
+				}
+				window.consolePanel.enable();
+			};
+			consoleJs.src = 'console-panel.js';
+			consoleCss.href = 'console-panel.css';
+
+			document.head.appendChild(consoleJs);
+			document.head.appendChild(consoleCss);
+		})();
+	</script>
 </head>
 
 <body>

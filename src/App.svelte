@@ -15,7 +15,9 @@
       .then((result) => {
         user = result.user;
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log("🛎 ", "error during login", error);
+      });
   }
 
   const unsubscribe = authState(auth).subscribe((u) => (user = u));

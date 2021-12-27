@@ -20,5 +20,8 @@ export const authProvider = new GoogleAuthProvider();
 
 
 if (process.env === 'dev') {
+  // connectFirestoreEmulator(db, 'http://0.0.0.0', 8080);
+  // connectFirestoreEmulator(db, 'http://192.168.1.131', 8080);
+  // connectFirestoreEmulator(db, window.location.hostname, 8080);
   connectFirestoreEmulator(db, 'localhost', 8080);
 }

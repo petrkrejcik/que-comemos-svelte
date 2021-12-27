@@ -5,7 +5,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
+    "start": "sirv public --no-clear --port 5001 --host",
+    "release": "yarn build && firebase deploy",
     "emulators:start": "firebase emulators:start --only=firestore --import=./firestore-emulators",
     "_emulators:start": "firebase emulators:start --only=functions,firestore,auth,storage --import=./firestore-emulators",
     "emulators:export": "firebase emulators:export ./firestore-emulators"
