@@ -1,5 +1,9 @@
 # Que comemos
 
+## TODO
+- `cena` -> `dinner`
+- `eatFor` -> `daytime`
+
 ## Features
 - See food plan
   - Per week

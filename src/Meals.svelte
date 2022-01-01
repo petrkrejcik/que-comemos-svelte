@@ -18,7 +18,7 @@
   $: weekId = getWeekId(week);
   $: weekPlanRef = doc(db, "weekPlans", weekId);
 
-  const mealsQuery = query(mealsRef, where("eatFor", "==", "lunch"), orderBy("name"));
+  const mealsQuery = query(mealsRef, where("eatFor", "==", "lunch"), where("forChild", "==", true), orderBy("name"));
   $: weekPlanQuery = query(weekPlanRef);
 
   let meals = writable([]);
