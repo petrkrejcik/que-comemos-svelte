@@ -1,37 +1,24 @@
 <script>
-  import Profile from "./Profile.svelte";
-  import { auth, authProvider } from "./firebase";
-  import { getAuth, signInWithPopup } from "firebase/auth";
-  import { authState } from "rxfire/auth";
+  import { Router, Link, Route } from "svelte-routing";
   import Meals from "./Meals.svelte";
+  import Day from "./Day.svelte";
+  import ProtectedRoute from "./ProtectedRoute.svelte";
+  import Login from "./Login.svelte";
+  import { user } from "./lib/user";
   import AddMeal from "./AddMeal.svelte";
 
-  let user;
-  let section = "meals";
-
-  function login() {
-    const auth = getAuth();
-    signInWithPopup(auth, authProvider)
-      .then((result) => {
-        user = result.user;
-      })
-      .catch((error) => {
-        console.log("🛎 ", "error during login", error);
-      });
-  }
-
-  const unsubscribe = authState(auth).subscribe((u) => (user = u));
+  export let url = "";
 </script>
 
-<section>
-  {#if user}
-    {#if section === "meals"}
-      <Meals />
-      <button on:click={() => (section = "add")}>Add</button>
-    {:else if section === "add"}
-      <AddMeal onSave={() => (section = "meals")} />
-    {/if}
-  {:else}
-    <button on:click={login}> Signin with Google </button>
-  {/if}
-</section>
+{#if $user === undefined}
+  <div style="height: 100%; display: flex; justify-content: center; align-items: center;">Cargando...</div>
+{:else}
+  <Router {url}>
+    <section>
+      <ProtectedRoute path="day/:weekId/:dayId" component={Day} />
+      <Route path="/add" component={AddMeal} />
+      <Route path="/login" component={Login} />
+      <ProtectedRoute path="/" component={Meals} />
+    </section>
+  </Router>
+{/if}
