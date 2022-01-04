@@ -1,4 +1,5 @@
 <script>
+  import "smelte/src/tailwind.css";
   import { Router, Link, Route } from "svelte-routing";
   import Meals from "./Meals.svelte";
   import Day from "./Day.svelte";
@@ -11,13 +12,13 @@
 </script>
 
 {#if $user === undefined}
-  <div style="height: 100%; display: flex; justify-content: center; align-items: center;">Cargando...</div>
+  <div class="h-full w-full flex justify-center items-center">Cargando...</div>
 {:else}
   <Router {url}>
     <section>
-      <ProtectedRoute path="day/:weekId/:dayId" component={Day} />
-      <Route path="/add" component={AddMeal} />
       <Route path="/login" component={Login} />
+      <ProtectedRoute path="/day/:weekId/:dayIndex" component={Day} />
+      <ProtectedRoute path="/add" component={AddMeal} />
       <ProtectedRoute path="/" component={Meals} />
     </section>
   </Router>

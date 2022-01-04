@@ -2,8 +2,10 @@
   import { writable } from "svelte/store";
   import { collection, addDoc } from "firebase/firestore";
   import { db } from "./firebase";
-
-  export let onSave;
+  import { Button, TextField, Select, Checkbox } from "smelte";
+  import AppBar from "./AppBar.svelte";
+  import Content from "./Content.svelte";
+  import { CATEGORIES } from "./lib/meal";
 
   const meal = writable({
     name: "",
@@ -14,34 +16,36 @@
 
   const onSubmit = () => {
     addDoc(collection(db, "meals"), $meal);
-    onSave();
+    history.back();
   };
+
+  const eatFor = [
+    { value: "lunch", text: "Comida" },
+    { value: "dinner", text: "Cena" },
+  ];
 </script>
 
-<form on:submit|preventDefault={onSubmit} style="display: flex; flex-direction: column">
-  Nombre
-  <input type="text" bind:value={$meal.name} />
+<AppBar>
+  <Button on:click={() => history.back()} icon="arrow_back" text />
+</AppBar>
 
-  Categoría
-  <select bind:value={$meal.category}>
-    <option value="meat">Carne</option>
-    <option value="fish">Pescado</option>
-    <option value="beans">Legumbres</option>
-    <option value="vegetable">Verdura</option>
-    <option value="pasta">Pasta</option>
-    <option value="bread">Pan</option>
-  </select>
+<Content>
+  <form on:submit|preventDefault={onSubmit} class="flex flex-col">
+    <TextField label="Nombre" bind:value={$meal.name} />
+    <Select
+      label="Categoría"
+      bind:value={$meal.category}
+      selectedLabel={CATEGORIES.find((c) => c.value === $meal.category)?.text}
+      items={CATEGORIES}
+    />
+    <Select
+      label="Cuando"
+      bind:value={$meal.eatFor}
+      selectedLabel={eatFor.find((e) => e.value === $meal.eatFor)?.text}
+      items={eatFor}
+    />
+    <Checkbox label="También para niños" bind:checked={$meal.forChild} />
 
-  Cuando
-  <select bind:value={$meal.eatFor}>
-    <option value="lunch">Comida</option>
-    <option value="dinner">Cena</option>
-  </select>
-
-  <div style="display: flex">
-    <input type="checkbox" bind:checked={$meal.forChild} id="forChild" /><label for="forChild">También para niños</label
-    >
-  </div>
-
-  <button type="submit" style="margin-top: 8px">Guardar</button>
-</form>
+    <Button type="submit" class="mt-4">Guardar</Button>
+  </form>
+</Content>

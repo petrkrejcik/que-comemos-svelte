@@ -1,10 +1,9 @@
-import { getAuth } from "firebase/auth";
 import { authState } from "rxfire/auth";
-import {writable} from "svelte/store"; 
+import {writable} from "svelte/store";
+import { auth } from "../firebase"; 
 
 export let user = writable();
 
-const auth = getAuth();
 authState(auth).subscribe(u => {
   user.set(u)
 });
