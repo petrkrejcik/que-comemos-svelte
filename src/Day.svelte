@@ -45,8 +45,8 @@
 </script>
 
 <AppBar class="flex justify-between">
-  <Button on:click={() => navigate("/")} icon="arrow_back" text />
-  <Button on:click={() => navigate("/add")} icon="add" text />
+  <Button on:click={() => navigate("/")} icon="arrow_back" text color="white" />
+  <Button on:click={() => navigate("/add")} icon="add" text color="white" />
 </AppBar>
 
 <Content>

@@ -26,7 +26,7 @@
 </script>
 
 <AppBar>
-  <Button on:click={() => history.back()} icon="arrow_back" text />
+  <Button on:click={() => history.back()} icon="arrow_back" text color="white" />
 </AppBar>
 
 <Content>
