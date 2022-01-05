@@ -22,7 +22,7 @@
   $: days = [
     { text: "Lunes", onClick: () => navigate(`/day/${weekId}/d0`), food: weekPlan.d0?.lunch },
     { text: "Martes", onClick: () => navigate(`/day/${weekId}/d1`), food: weekPlan.d1?.lunch },
-    { text: "Miercoles", onClick: () => navigate(`/day/${weekId}/d2`), food: weekPlan.d2?.lunch },
+    { text: "Miércoles", onClick: () => navigate(`/day/${weekId}/d2`), food: weekPlan.d2?.lunch },
     { text: "Jueves", onClick: () => navigate(`/day/${weekId}/d3`), food: weekPlan.d3?.lunch },
     { text: "Viernes", onClick: () => navigate(`/day/${weekId}/d4`), food: weekPlan.d4?.lunch },
     { text: "Sábado", onClick: () => navigate(`/day/${weekId}/d5`), food: weekPlan.d5?.lunch },
