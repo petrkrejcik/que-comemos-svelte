@@ -28,6 +28,7 @@
   const onChange = (e) => {
     const meal = $meals.find((meal) => meal.id === e.detail);
     if (!meal) return;
+    const icon = getIcon(meal.category);
     setDoc(
       weekPlanRef,
       {
@@ -35,7 +36,7 @@
           [eatFor]: {
             id: meal.id,
             name: meal.name,
-            icon: getIcon(meal.category),
+            ...(icon && icon),
           },
         },
       },
