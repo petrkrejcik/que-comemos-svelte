@@ -10,11 +10,12 @@
 
   export let weekId;
   export let dayIndex;
+  export let eatFor;
 
   let weekPlan = {};
   const weekPlanRef = doc(db, "weekPlans", weekId);
 
-  const meals = getMeals();
+  const meals = getMeals({ eatFor });
   getWeekPlan(weekId).subscribe({
     next: (result = []) => {
       weekPlan = result;
@@ -31,7 +32,7 @@
       weekPlanRef,
       {
         [dayIndex]: {
-          lunch: {
+          [eatFor]: {
             id: meal.id,
             name: meal.name,
             icon: getIcon(meal.category),
@@ -51,7 +52,7 @@
 
 <Content>
   <List
-    value={weekPlan[dayIndex]?.lunch?.id || null}
+    value={weekPlan[dayIndex]?.[eatFor]?.id || null}
     items={$meals.map((meal) => ({
       text: [getIcon(meal.category), meal.name].filter(Boolean).join(" "),
       value: meal.id,

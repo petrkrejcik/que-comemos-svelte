@@ -4,9 +4,8 @@
   import { db } from "./firebase";
   import { randomizeWeek } from "./lib/meal";
   import { getWeekId } from "./date";
-  import { url } from "./lib/routerStore";
   import { getMeals, getWeekPlan } from "./lib/firestoreCache";
-  import { Button, List } from "smelte";
+  import { Button, List, Tabs } from "smelte";
   import AppBar from "./AppBar.svelte";
   import Content from "./Content.svelte";
   import dayjs from "dayjs";
@@ -17,16 +16,17 @@
   let days = [];
   let weekId = getWeekId(week);
   let weekPlanRef = doc(db, "weekPlans", weekId);
+  let eatForTab = "lunch";
   $: weekId = getWeekId(week);
   $: weekPlanRef = doc(db, "weekPlans", weekId);
   $: days = [
-    { text: "Lunes", onClick: () => navigate(`/day/${weekId}/d0`), food: weekPlan.d0?.lunch },
-    { text: "Martes", onClick: () => navigate(`/day/${weekId}/d1`), food: weekPlan.d1?.lunch },
-    { text: "Miércoles", onClick: () => navigate(`/day/${weekId}/d2`), food: weekPlan.d2?.lunch },
-    { text: "Jueves", onClick: () => navigate(`/day/${weekId}/d3`), food: weekPlan.d3?.lunch },
-    { text: "Viernes", onClick: () => navigate(`/day/${weekId}/d4`), food: weekPlan.d4?.lunch },
-    { text: "Sábado", onClick: () => navigate(`/day/${weekId}/d5`), food: weekPlan.d5?.lunch },
-    { text: "Domingo", onClick: () => navigate(`/day/${weekId}/d6`), food: weekPlan.d6?.lunch },
+    { text: "Lunes", onClick: () => navigate(`/day/${weekId}/d0/${eatForTab}`), food: weekPlan.d0?.[eatForTab] },
+    { text: "Martes", onClick: () => navigate(`/day/${weekId}/d1/${eatForTab}`), food: weekPlan.d1?.[eatForTab] },
+    { text: "Miércoles", onClick: () => navigate(`/day/${weekId}/d2/${eatForTab}`), food: weekPlan.d2?.[eatForTab] },
+    { text: "Jueves", onClick: () => navigate(`/day/${weekId}/d3/${eatForTab}`), food: weekPlan.d3?.[eatForTab] },
+    { text: "Viernes", onClick: () => navigate(`/day/${weekId}/d4/${eatForTab}`), food: weekPlan.d4?.[eatForTab] },
+    { text: "Sábado", onClick: () => navigate(`/day/${weekId}/d5/${eatForTab}`), food: weekPlan.d5?.[eatForTab] },
+    { text: "Domingo", onClick: () => navigate(`/day/${weekId}/d6/${eatForTab}`), food: weekPlan.d6?.[eatForTab] },
   ];
 
   $: getWeekPlan(weekId).subscribe({
@@ -55,7 +55,7 @@
         return {
           ...result,
           [`d${dayIndex}`]: {
-            lunch: {
+            [eatForTab]: {
               id: meal.id,
               name: meal.name,
             },
@@ -74,6 +74,15 @@
   </div>
 </AppBar>
 
+<Tabs
+  bind:selected={eatForTab}
+  class="w-100 bg-primary-200"
+  color="white"
+  items={[
+    { id: "lunch", text: "Comida" },
+    { id: "dinner", text: "Cena" },
+  ]}
+/>
 <Content>
   <List items={days} dense navigation>
     <li slot="item" let:item>

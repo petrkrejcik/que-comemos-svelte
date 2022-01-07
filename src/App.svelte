@@ -17,7 +17,7 @@
   <Router {url}>
     <section>
       <Route path="/login" component={Login} />
-      <ProtectedRoute path="/day/:weekId/:dayIndex" component={Day} />
+      <ProtectedRoute path="/day/:weekId/:dayIndex/:eatFor" component={Day} />
       <ProtectedRoute path="/add" component={AddMeal} />
       <ProtectedRoute path="/" component={Meals} />
     </section>

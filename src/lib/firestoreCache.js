@@ -6,12 +6,12 @@ import { db } from "../firebase";
 
 const cache = writable({});
 
-export const getMeals = () => {
+export const getMeals = (filter = {}) => {
   if (cache.meals) {
     return cache.meals
   }
   const mealsRef = collection(db, "meals");
-  const mealsQuery = query(mealsRef, where("eatFor", "==", "lunch"), where("forChild", "==", true), orderBy("name"));
+  const mealsQuery = query(mealsRef, where("eatFor", "==", filter.eatFor || "lunch"), where("forChild", "==", true), orderBy("name"));
   const meals = collectionData(mealsQuery, { idField: "id" }).pipe(startWith([]));
   return cache.meals = meals
 }
